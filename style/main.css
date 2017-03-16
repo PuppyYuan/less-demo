@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*我是会被编译的*/
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+.border {
+  border: solid 5px pink;
+}
+.test_mixin {
+  border: solid green 10px;
+}
+.sanjiao {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: #ccc transparent transparent;
+  border-style: solid;
+}
+.list {
+  width: 500px;
+  margin: 30px auto;
+  padding: 0;
+  list-style: none;
+}
+.list li {
+  height: 30px;
+  line-height: 30px;
+  background: pink;
+  margin-bottom: 5px;
+}
+.list a {
+  float: left;
+}
+.list a:hover {
+  color: red;
+}
+.test_03 {
+  width: calc(300px-30px);
+}

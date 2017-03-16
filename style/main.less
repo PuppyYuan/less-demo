@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+body{
+  // background: red;
+}
+/*我是会被编译的*/
+//我是不会被编译的
+
+@test_width: 300px;
+
+.box{
+  width: @test_width;
+  height: @test_width;
+  border: 1px solid black;
+}
+
+.border{
+  border: solid 5px pink;
+}
+
+.border_mixin(@border_width:10px){
+  border: solid green @border_width;
+}
+
+.test_mixin{
+  .border_mixin;
+}
+
+.sanjiao {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+
+  .triangle(top);
+}
+
+// 匹配模式
+.triangle(top, @w:10px, @c:#ccc){
+  border-width: @w;
+  border-color: @c transparent transparent;
+  border-style: solid;
+}
+
+.list{
+  width:500px;
+  margin: 30px auto;
+  padding: 0;
+  list-style: none;
+
+  li{
+    height: 30px;
+    line-height: 30px;
+    background: pink;
+    margin-bottom: 5px;
+  }
+
+  a {
+    float: left;
+    &:hover{
+      color: red;
+    }
+  }
+}
+
+//避免编译
+
+.test_03{
+  width: ~'calc(300px-30px)';
+}
